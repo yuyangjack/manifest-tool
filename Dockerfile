@@ -24,4 +24,4 @@ RUN set -x \
 	&& rm -rf "$GOPATH"
 
 # The source is bind-mounted into this folder
-WORKDIR /go/src/github.com/estesp/manifest-tool
+WORKDIR /go/src/github.com/yuyangjack/manifest-tool

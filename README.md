@@ -205,7 +205,7 @@ Specifically:
   2. Using the YAML input option, you can leave the platform specification empty and `manifest-tool` will auto-populate the platform definition by using the source image manifest OS/arch details. Note that this is potentially deficient for cases where the image was built in a cross-compiled fashion and the source image data is incorrect as it does not match the binary OS/arch content in the image layers.
 
  - Release **v0.6.0**:
-  1. You can specify `tags:` as a list of additional tags to push to the registry against the target manifest list name being created ([#32](https://github.com/estesp/manifest-tool/pull/32)):
+  1. You can specify `tags:` as a list of additional tags to push to the registry against the target manifest list name being created ([#32](https://github.com/yuyangjack/manifest-tool/pull/32)):
 
 ```yaml
 image: myprivreg:5000/someimage:1.0.0
@@ -230,13 +230,13 @@ To build `manifest-tool`, clone this repository into your `$GOPATH`:
 $ cd $GOPATH/src
 $ mkdir -p github.com/estesp
 $ cd github.com/estesp
-$ git clone https://github.com/estesp/manifest-tool
+$ git clone https://github.com/yuyangjack/manifest-tool
 $ cd manifest-tool && make binary
 ```
 
 If you do not have a local Golang environment, you can use the `make build` target to build `manifest-tool` in a Golang 1.9.1-based container environment. This will require that you have Docker installed. The `make static` target will build a statically-linked binary, and `make cross` is used to build all supported CPU architectures, creating static binaries for each platform.
 
-Note that signed binary releases are available on the project's [GitHub releases page](https://github.com/estesp/manifest-tool/releases) for several CPU architectures for Linux as well as OSX/macOS.
+Note that signed binary releases are available on the project's [GitHub releases page](https://github.com/yuyangjack/manifest-tool/releases) for several CPU architectures for Linux as well as OSX/macOS.
 
 ### Using manifest-tool Without Installation
 
@@ -294,7 +294,7 @@ and the APIs used to create a manifest list.
 
 This GitHub repo now has a pre-configured test script which will use readily available multi-architecture
 content from DockerHub and tag, push, and then combine it into a manifest list against any image registry
-you point it to. See the [test-registry.sh script](https://github.com/estesp/manifest-tool/blob/master/integration/test-registry.sh) in this repo's **integration** directory
+you point it to. See the [test-registry.sh script](https://github.com/yuyangjack/manifest-tool/blob/master/integration/test-registry.sh) in this repo's **integration** directory
 for further details. A simple use of the script is
 shown below to test a private registry:
 ```

@@ -17,24 +17,24 @@ INTERACTIVE := $(shell [ -t 0 ] && echo 1 || echo 0)
 ifeq ($(INTERACTIVE), 1)
 	DOCKER_RUN += -t
 endif
-DOCKER_RUN_DOCKER := $(DOCKER_RUN) -v $(shell pwd):/go/src/github.com/estesp/manifest-tool -w /go/src/github.com/estesp/manifest-tool "$(DOCKER_IMAGE)"
+DOCKER_RUN_DOCKER := $(DOCKER_RUN) -v $(shell pwd):/go/src/github.com/yuyangjack/manifest-tool -w /go/src/github.com/yuyangjack/manifest-tool "$(DOCKER_IMAGE)"
 
 all: build
 
 build:
-	$(DOCKER_RUN) -v $(shell pwd):/go/src/github.com/estesp/manifest-tool -w /go/src/github.com/estesp/manifest-tool golang:1.9.1 /bin/bash -c "\
-		go build -ldflags \"-X main.gitCommit=${COMMIT}\" -o manifest-tool github.com/estesp/manifest-tool"
+	$(DOCKER_RUN) -v $(shell pwd):/go/src/github.com/yuyangjack/manifest-tool -w /go/src/github.com/yuyangjack/manifest-tool golang:1.9.1 /bin/bash -c "\
+		go build -ldflags \"-X main.gitCommit=${COMMIT}\" -o manifest-tool github.com/yuyangjack/manifest-tool"
 
 # Target to build a dynamically linked binary
 binary:
-	go build -ldflags "-X main.gitCommit=${COMMIT}" -o manifest-tool github.com/estesp/manifest-tool
+	go build -ldflags "-X main.gitCommit=${COMMIT}" -o manifest-tool github.com/yuyangjack/manifest-tool
 
 # Target to build a statically linked binary
 static:
 	GO_EXTLINK_ENABLED=0 CGO_ENABLED=0 go build \
 	   -ldflags "-w -extldflags -static -X main.gitCommit=${COMMIT}" \
 	   -tags netgo -installsuffix netgo \
-	   -o manifest-tool github.com/estesp/manifest-tool
+	   -o manifest-tool github.com/yuyangjack/manifest-tool
 
 build-container:
 	docker build ${DOCKER_BUILD_ARGS} -t "$(DOCKER_IMAGE)" .

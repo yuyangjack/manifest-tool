@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/codegangsta/cli"
-	"github.com/estesp/manifest-tool/docker"
-	"github.com/estesp/manifest-tool/types"
+	"github.com/yuyangjack/manifest-tool/docker"
+	"github.com/yuyangjack/manifest-tool/types"
 	"github.com/go-yaml/yaml"
 	"github.com/sirupsen/logrus"
 

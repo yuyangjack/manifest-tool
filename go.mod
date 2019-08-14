@@ -1,4 +1,4 @@
-module github.com/estesp/manifest-tool
+module github.com/yuyangjack/manifest-tool
 
 go 1.12
 
