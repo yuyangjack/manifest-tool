@@ -8,8 +8,8 @@ require (
 	github.com/codegangsta/cli v1.2.0
 	github.com/docker/cli v0.0.0-20190808020226-f3af74c18ca7
 	github.com/docker/distribution v2.7.1+incompatible
-	github.com/docker/docker v1.13.1
-	github.com/docker/docker-credential-helpers v0.6.1 // indirect
+	github.com/moby/moby v1.13.1
+	github.com/moby/moby-credential-helpers v0.6.1 // indirect
 	github.com/docker/go-metrics v0.0.0-20181218153428-b84716841b82 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7 // indirect
@@ -36,5 +36,3 @@ require (
 )
 
 replace github.com/Sirupsen/logrus v1.4.2 => github.com/sirupsen/logrus v1.4.2
-
-replace github.com/docker/docker => ./vendor/github.com/docker/docker

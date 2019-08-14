@@ -2,7 +2,7 @@ package types
 
 import (
 	"github.com/docker/distribution/manifest/manifestlist"
-	"github.com/docker/docker/api/types/container"
+	"github.com/moby/moby/api/types/container"
 )
 
 // ImageInspect holds information about an image in a registry

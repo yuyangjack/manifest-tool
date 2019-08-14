@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/codegangsta/cli"
-	"github.com/docker/docker/cli/config"
+	"github.com/moby/moby/cli/config"
 	"github.com/sirupsen/logrus"
 )
 

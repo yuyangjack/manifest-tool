@@ -14,8 +14,8 @@ import (
 	"github.com/docker/distribution/registry/api/v2"
 	"github.com/docker/distribution/registry/client/auth"
 	"github.com/docker/distribution/registry/client/transport"
-	"github.com/docker/docker/dockerversion"
-	"github.com/docker/docker/registry"
+	"github.com/moby/moby/dockerversion"
+	"github.com/moby/moby/registry"
 	"github.com/opencontainers/go-digest"
 	"github.com/sirupsen/logrus"
 
